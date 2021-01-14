@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+header {
+    background-color: #2B2B2B;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: static;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 0px 10px;
+    font-family: 'Bodoni Moda', serif;
+}
+
+.header {
+    font-size: 70px;
+    margin: -15px 20px;
+}
+
+.subheader {
+    margin: 0px 50px;
+}
+
+p {
+    font-size: 12px;
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    margin: 0px 10px;
+    font-family: 'Bodoni Moda', serif;
+
+}
+
+.sidenav {
+    z-index: 1;
+    height: 100%;
+    width: 100px;
+    position: absolute;
+    background-color: #2B2B2B;
+    overflow-x: hidden;
+    top: 18%;
+  }
+
+  .sidenav a, .dropdown-btn {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    padding: 10px 5px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    background: none;
+    outline: none;
+  }
+
+  .dropdown-btn {
+      border-bottom: 1px solid;
+      font-size: 20px;
+      width: 100px;
+      display: block;
+  }
+
+  li {
+      padding-top: 10px;
+  }
