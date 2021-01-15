@@ -29,6 +29,7 @@ h1 {
 
 .subheader {
     margin: 0px 50px;
+    font-size: 18px;
 }
 
 p {
@@ -50,14 +51,14 @@ h2 {
     position: absolute;
     background-color: #2B2B2B;
     overflow-x: hidden;
-    top: 18%;
+    top: 130px;
   }
 
   .sidenav a, .dropdown-btn {
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
     padding: 10px 5px;
-    font-size: 18px;
+    font-size: 14px;
     color: white;
     border: none;
     background: none;
@@ -66,13 +67,15 @@ h2 {
 
   .dropdown-btn {
       border-bottom: 1px solid;
-      font-size: 20px;
+      font-size: 14px;
       width: 100px;
       display: block;
   }
 
   li {
       padding-top: 10px;
+      font-size: 12px;
+      text-align: center;
   }
 
   .main {

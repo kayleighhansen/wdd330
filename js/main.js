@@ -24,29 +24,29 @@ const element_3 = document.querySelector('ol');
 element_3.appendChild(notes_button);
 
 
-// //navigation bar - creates all of the li's from week folders
-// let ol = document.querySelector('ol');
+ //navigation bar - creates all of the li's from week folders
+ let ol = document.querySelector('#dropdown-container');
 
-// const links = [
-//   {
-//     label: "home",
-//     url: "index.html"
-//   },
-//   {
-//     label: "01",
-//     url: "week01/index.html"
-//   },
-//   {
-//     label: "02",
-//     url: "week02/index.html"
-//   }
-// ]
+ const links = [
+   {
+        label: "home",
+        url: "index.html"
+    },
+    {
+        label: "01",
+        url: "week01/index.html"
+    },
+    {
+        label: "02",
+        url: "week02/index.html"
+    }
+];
 
-// links.forEach(
-//   link => {
-//     ol.itemHTML +=
-//       '<li><a href="${link.url}"....>'
-//   }
-// )
+console.log(links);
 
-// create footer 
+links.forEach(
+    link => {
+        ol.innerHTML += 
+        `<li><a href="${link.url}">${link.label}</a></li>`;
+    }
+);
