@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -16,10 +17,14 @@ header {
     position: static;
 }
 
+hr {
+    margin: 20px 0px;
+}
+
 h1 {
-    font-size: 30px;
-    margin: 0px 10px;
-    font-family: 'Bodoni Moda', serif;
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
 }
 
 .header {
@@ -35,23 +40,21 @@ h1 {
 p {
     font-size: 12px;
     margin: 10px;
-    font-family: 'Roboto', sans-serif;
 }
 
 h2 {
     margin: 0px 10px;
-    font-family: 'Bodoni Moda', serif;
-
+    text-align: center;
+    font-size: 15px;
 }
 
 .sidenav {
     z-index: 1;
-    height: 100%;
+    max-height: max-content;
     width: 100px;
     position: absolute;
     background-color: #2B2B2B;
     overflow-x: hidden;
-    top: 130px;
   }
 
   .sidenav a, .dropdown-btn {
@@ -75,9 +78,18 @@ h2 {
   li {
       padding-top: 10px;
       font-size: 12px;
-      text-align: center;
   }
 
   .main {
       margin-left: 120px;
+  }
+
+  footer {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: rgb(198, 198, 198);
+      z-index: 1;
+      width: 100%;
+      text-align: right;
   }

@@ -25,24 +25,28 @@ element_3.appendChild(notes_button);
 
 
  //navigation bar - creates all of the li's from week folders
- let ol = document.querySelector('#dropdown-container');
+ let ol = document.querySelector('.dropdown-container');
 
  const links = [
    {
         label: "home",
-        url: "index.html"
+        url: "../index.html"
     },
     {
-        label: "01",
-        url: "week01/index.html"
+        label: "week 01",
+        url: "../week01/index.html"
     },
     {
-        label: "02",
-        url: "week02/index.html"
+        label: "week 02",
+        url: "../week02/index.html"
+    },
+    {
+        label: "week 03",
+        url: "../week03/index.html"
     }
 ];
 
-console.log(links);
+console.log(ol.className);
 
 links.forEach(
     link => {
@@ -50,3 +54,12 @@ links.forEach(
         `<li><a href="${link.url}">${link.label}</a></li>`;
     }
 );
+
+//create footer
+
+// const footer = document.createElement("p");
+// const text_f = document.createTextNode("@Kayleigh Hansen | BYUI | WDD330 Brother Thayne");
+// footer.appendChild(text_f);
+// const text_f = document.querySelector('footer');
+// console.log(footer);
+// element.appendChild(footer);
