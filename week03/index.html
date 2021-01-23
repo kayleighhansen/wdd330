@@ -17,18 +17,39 @@
     </section>
     <main>
         <h1>Week 03 Notes</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga possimus omnis, consectetur eos doloremque accusamus odit nihil similique assumenda deserunt voluptates rerum cumque neque minus modi voluptatibus eligendi laboriosam. Consequatur?</p>
+        <p>Objects, DOM, Events</p>
         <hr>
         <h2>Doesn't Make Sense:</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, saepe! Modi tempore quia, animi praesentium dolorum possimus nulla voluptate incidunt, corrupti consectetur eos. Architecto enim ipsam commodi repellat earum iste!</p>
+        <ul>
+            <li>What the heck is a map?</li>
+            <li>Patterns are a bit confusing</li>
+            <li>I need to re-read the DOM chapters</li>
+        </ul>
         <hr>
         <h2>Remember This:</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, asperiores earum. Error molestiae, quos quaerat molestias ex nemo dicta in exercitationem tempora! Tenetur hic tempora facere recusandae nisi aperiam vel.</p>
+        <ul>
+            <li>for (const key of Object.keys (object_name) ) <br> -- gets you all of the attributes in the object</li>
+            <li>for( const [key , value] of Object.entries (superman) ) { 
+                console.log (` ${key} : ${value} `);
+                } <br> -- gets you a cleaner list</li>
+            <li>const dice = {
+                sides : 6,
+                roll() {
+                    return Math.floor ( this.sides * Math.random() ) + 1;
+                } }
+                <br> -- creates an object 'dice' with six sides and a function to 'roll' and get random numbers</li>
+            <li>Math.abs() <br> -- returns the absolute value </li>
+            <li>Math.ceil() <br> -- returns the next highest integer </li>
+            <li>Math.floor() <br> -- returns the next lowest integer </li>
+            <li>Math.round() <br> -- returns the rounded integer </li>
+            <li>Math.pwo() <br> -- returns the exponential, x^y </li>
+            <li>'?' makes the token optional</li>
+            <li>const pdf = /.*\.pdf$/; -- looks for a pdf</li>
+        </ul>
         <hr>
         <h2>Code:</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quaerat vero aspernatur consequuntur vitae dolore facere odit maiores soluta iusto, ratione pariatur! Aspernatur alias sapiente, beatae cupiditate esse nisi fuga.</p>
-        <a href="code.html"></a>
-
+        <li><a href="code.html">Code for Week03</a></li>
+        <hr>
     </main>
     <footer></footer>
     <script src="../js/main.js"></script>

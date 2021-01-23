@@ -5,7 +5,7 @@
 }
 
 main {
-    margin-left: 100px;
+    margin-left: 130px;
     margin-top: 20px;
 }
 
@@ -50,11 +50,8 @@ h2 {
 
 .sidenav {
     z-index: 1;
-    max-height: max-content;
-    width: 100px;
     position: absolute;
     background-color: #2B2B2B;
-    overflow-x: hidden;
   }
 
   .sidenav a, .dropdown-btn {
