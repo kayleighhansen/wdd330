@@ -67,4 +67,3 @@ footer.appendChild(text_f);
 const element_f = document.querySelector('footer');
 console.log(footer);
 element_f.appendChild(footer);
-
