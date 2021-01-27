@@ -43,6 +43,10 @@ element_3.appendChild(notes_button);
     {
         label: "week 03",
         url: "../week03/index.html"
+    },
+    {
+        label: "week 04",
+        url: "../week04/index.html"
     }
 ];
 
@@ -55,11 +59,12 @@ links.forEach(
     }
 );
 
-//create footer
+// create footer
 
-// const footer = document.createElement("p");
-// const text_f = document.createTextNode("@Kayleigh Hansen | BYUI | WDD330 Brother Thayne");
-// footer.appendChild(text_f);
-// const text_f = document.querySelector('footer');
-// console.log(footer);
-// element.appendChild(footer);
+const footer = document.createElement('p');
+const text_f = document.createTextNode("@Kayleigh Hansen | BYUI | WDD330 Brother Thayne");
+footer.appendChild(text_f);
+const element_f = document.querySelector('footer');
+console.log(footer);
+element_f.appendChild(footer);
+
