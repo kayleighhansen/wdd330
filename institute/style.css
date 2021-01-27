@@ -99,3 +99,26 @@ p {
     box-shadow: 2px 2px 2px 1px gray;
     width: 250px;
 }
+
+@media only screen and (max-width: 800px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header h2{
+        font-size: 45px;
+    }
+
+    img {
+        width: 300px;
+    }
+
+    main hr {
+        width: 200px;
+    }
+
+    .living_christ_text {
+        display: block;
+    }
+  }
