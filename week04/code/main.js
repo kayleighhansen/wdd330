@@ -10,6 +10,9 @@ squares.forEach(
 //select the player indicator at the bottom of the screen
 document.querySelector('.turn-indicator').innerHTML = "Player 1's Turn";
 
+//select the table
+const board = document.querySelector('table');
+
 //set player to default 0
 let player = 0;
 
@@ -47,3 +50,14 @@ function move(event, player) {
         document.querySelector('.turn-indicator').innerHTML = "Game Over";
     }
 }
+
+//reset button
+function resetBoard() {
+    console.dir(board);
+    for (let i = 0; i < board.rows.length; i++) {
+      let row = board.rows[i];
+      for (let j = 0; j < row.cells.length; j++) {
+        row.cells[j].innerHTML = '';
+      }
+    }
+  }
