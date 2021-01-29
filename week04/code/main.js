@@ -21,6 +21,16 @@ function next_turn() {
     return player = player + 1;
 }
 
+//reset button
+function resetBoard() {
+    for (let i = 0; i < board.rows.length; i++) {
+      let row = board.rows[i];
+      for (let j = 0; j < row.cells.length; j++) {
+        row.cells[j].innerHTML = '';
+      }
+    }
+}
+
 //each time a box is touched
 function move(event, player) {
     //change the turn of the player 
@@ -44,20 +54,6 @@ function move(event, player) {
         //change the indicator at the bottom of the screen
         document.querySelector('.turn-indicator').innerHTML = "Player 2's Turn";
     }
-
-    //if there have been 9 turns, then the game is over
-    if (turn == 9) {
-        document.querySelector('.turn-indicator').innerHTML = "Game Over";
-    }
 }
 
-//reset button
-function resetBoard() {
-    console.dir(board);
-    for (let i = 0; i < board.rows.length; i++) {
-      let row = board.rows[i];
-      for (let j = 0; j < row.cells.length; j++) {
-        row.cells[j].innerHTML = '';
-      }
-    }
-  }
+
