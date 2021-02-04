@@ -1,5 +1,4 @@
 //select all td tags and add a touchend event listener
-
 const squares = document.querySelectorAll('td');
 squares.forEach(
     td => {
@@ -55,5 +54,3 @@ function move(event, player) {
         document.querySelector('.turn-indicator').innerHTML = "Player 2's Turn";
     }
 }
-
-

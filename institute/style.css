@@ -99,22 +99,22 @@ p {
     position: absolute;
     padding: 20px;
     box-shadow: 2px 2px 2px 1px gray;
-    width: 250px;
+    width: 300px;
     font-size: 12px;
     color: black;
     background-color: #E7EEEE;
 }
 
 #story {
-    color: blue;
+    color: #A599B5;
 }
 
 #scripture {
-    color: red;
+    color: #7F74C8;
 }
 
 #photo {
-    color: yellowgreen;
+    color: #D05D6A;
 }
 
 @media only screen and (max-width: 800px) {

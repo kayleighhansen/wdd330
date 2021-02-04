@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+header h1 {
+    text-align: center;
+    margin: 40px 0px 20px 0px;
+}
+
+.counter {
+    text-align: center; 
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0px 30%;
+    padding: 5px;
+}
+
+.tasks {
+    border: .5px solid black;
+    padding: 10px;
+    margin: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
