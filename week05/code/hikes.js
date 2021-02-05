@@ -1,23 +1,8 @@
 import { hikeList } from "./list.js";
 console.log(hikeList);
 
-// class Hike: created the Hike 
-// for each object in hikeList
+const imgBasePath = "//byui-cit.github.io/cit261/examples/";
 
-
-// Functions: 
-// --------------------
-// create section 
-// create name 
-// create image
-// create distance
-// create difficulty
-// create direction
-// create description
-
-
-  const imgBasePath = "//byui-cit.github.io/cit261/examples/";
-  //on load grab the array and insert it into the page
   window.addEventListener("load", () => {
     showHikeList();
   });
