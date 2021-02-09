@@ -46,8 +46,9 @@ form {
     display: flex;
     justify-content: center;
     padding: 10px;
-    position: sticky;
+    position: absolute;
     bottom: 5%;
+    left: 7%;
 }
 
 #newTask {
@@ -74,7 +75,6 @@ form {
 }
 
 .check-box{
-    padding-left: 35px;
     cursor: pointer;
 }
 
@@ -86,8 +86,13 @@ form {
     right: 12%;
 }
 
+#div-color {
+    width: 40px;
+    height: 40px;
+}
+
 footer {
-    position: sticky;
+    position: absolute;
     bottom: 0;
     display: flex;
     justify-content: center;

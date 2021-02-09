@@ -1,6 +1,7 @@
 import {Task} from './tasks.js';
 
 // PLUS BUTTON
+// TODO: convert to local storage 
 
 const tasks = [];
 

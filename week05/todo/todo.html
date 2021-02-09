@@ -20,7 +20,7 @@
             <div id="tasks-list"></div>
             <div id="options-buttons">
                 <button id="btnAll" class="btnHead">All</button>
-                <button id="btnActive" class="btnHead">Active</button>
+                <button id="btnActive" class="btnHead">New</button>
                 <button id="atnCompleted" class="btnHead">Completed</button>
             </div>
         </section>  
@@ -28,7 +28,10 @@
         <section class="input">
             <form action="submit-task">
                 <div>
-                    <input type="text" id="newTask" name="task">
+                    <input type="color" id="div-color" name="div-color" value="#ff0000">
+                </div>
+                <div>
+                    <input type="text" id="newTask" name="task" placeholder="Task">
                 </div>
                 <div>
                     <button id="btnSave" onclick="">+</button>
