@@ -1,15 +1,21 @@
 import {Task} from './tasks.js';
 
+// PLUS BUTTON
+
 const tasks = [];
 
 function print(){
     const div = document.querySelector('#tasks-list');
     div.innerHTML = tasks.map(
         task=> 
-        `<tr>
-            <td class="check-box"><input type="checkbox" name="tasks" value="tasks" class="check-mark"></td>
-            <td class="task-box">${task.TaskDescription}</td>
-        </tr>`
+        `   <div class="task-div">
+                <input type="checkbox">
+                <label class="check-box">${task.TaskDescription}
+                    <span class="checkmark"></span> 
+                </label>
+                <button class="btnDelete" onclick=""> X </button>
+            </div>
+        `
     ).join('');
 }
 
@@ -23,3 +29,8 @@ document.querySelector('#btnSave')
     print();
 });
 
+// DELETE BUTTON
+//
+// document.querySelector('#btnDelete').addEventListener('click', (event) => {
+//         console.log("hello world");
+// });

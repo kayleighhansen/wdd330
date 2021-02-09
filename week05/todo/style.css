@@ -5,6 +5,12 @@
     text-transform: uppercase;
 }
 
+body {
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 header h1 {
     text-align: center;
     margin: 40px 0px 20px 0px;
@@ -22,6 +28,13 @@ header h1 {
     border: .5px solid black;
     padding: 10px;
     margin: 20px;
+    background-color: lightgray;
+    opacity: 70%;
+}
+
+.task-div {
+    border: 1px solid black;
+    padding: 15px;
 }
 
 #options-buttons {
@@ -29,26 +42,29 @@ header h1 {
     justify-content: center;
 }
 
-form div {
-    padding: 3px;
-}
-
-.input {
+form {
     display: flex;
     justify-content: center;
     padding: 10px;
+    position: sticky;
+    bottom: 5%;
 }
 
 #newTask {
     min-width: 200px;
-    height: 40px;
-    font-size: 25px;
+    height: 30px;
+    padding: 5px;
+    margin: 0px 5px;
+    font-size: 20px;
+    opacity: 70%;
 }
 
 #btnSave {
-    height: 40px;
-    font-size: 40px;
-    padding-bottom: 40px;
+    width: 40px;
+    font-size: 34px;
+    background-color: lightgray;
+    opacity: 70%;
+    border: 1px solid black;
 }
 
 .btnHead {
@@ -57,10 +73,24 @@ form div {
     height: 45px;
 }
 
-footer {
+.check-box{
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.btnDelete {
+    border: none;
+    background: none;
+    font-size: 20px;
     position: absolute;
+    right: 12%;
+}
+
+footer {
+    position: sticky;
     bottom: 0;
     display: flex;
     justify-content: center;
     width: 100%;
+    color: white;
 }
