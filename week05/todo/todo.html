@@ -14,15 +14,31 @@
     </header>
     <main>
         <div class="counter-div">
-            <h2 class="counter" id="counter"> 3 Tasks Left!</h2>
+            <h2 class="counter"><span class="counter-span">0 Tasks Left</span></h2>
         </div>
         <section class="tasks" id="tasks">
+            <div id="tasks-list"></div>
+            <div id="options-buttons">
+                <button id="btnAll" class="btnHead">All</button>
+                <button id="btnActive" class="btnHead">Active</button>
+                <button id="atnCompleted" class="btnHead">Completed</button>
+            </div>
+        </section>  
 
+        <section class="input">
+            <form action="submit-task">
+                <div>
+                    <input type="text" id="newTask" name="task">
+                </div>
+                <div>
+                    <button id="btnSave" onclick="">+</button>
+                </div>
+            </form>
         </section>
     </main>
     <footer>
         <p>&#169; Group 02 | BYUI | WDD330</p>
     </footer>
-    <script src="main.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>

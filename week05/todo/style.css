@@ -24,6 +24,39 @@ header h1 {
     margin: 20px;
 }
 
+#options-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+form div {
+    padding: 3px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#newTask {
+    min-width: 200px;
+    height: 40px;
+    font-size: 25px;
+}
+
+#btnSave {
+    height: 40px;
+    font-size: 40px;
+    padding-bottom: 40px;
+}
+
+.btnHead {
+    margin: 8px;
+    padding: 0px 20px;
+    height: 45px;
+}
+
 footer {
     position: absolute;
     bottom: 0;

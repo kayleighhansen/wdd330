@@ -1,0 +1,22 @@
+table, td, tr, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px;
+}
+
+div {
+    padding: 10px;
+}
+
+label {
+    display: inline-block;
+    min-width: 90px;
+}
+
+form {
+    position: absolute;
+    bottom: 0;
+}
