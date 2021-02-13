@@ -86,13 +86,23 @@ color: white;
     margin: 20px;
 }
 
-li {
-    padding-top: 10px;
+#projects li {
+    padding: 10px 20px;
+    margin: 20px;
     font-size: 12px;
+    list-style: none;
+    background-color: lightgray;
 }
 
-ul {
+#projects a {
+    color: black;
+    text-decoration: none;
+}
+
+#projects {
     margin-left: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 footer {
