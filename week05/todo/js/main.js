@@ -1,9 +1,14 @@
 import {Task} from './tasks.js';
 
-// PLUS BUTTON
-// TODO: convert to local storage 
-
 const tasks = [];
+
+if (localStorage.getItem('tasks')) {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+}
+
+if (tasks.length > 0) {
+    
+}
 
 function print(){
     const div = document.querySelector('#tasks-list');
@@ -30,8 +35,3 @@ document.querySelector('#btnSave')
     print();
 });
 
-// DELETE BUTTON
-//
-// document.querySelector('#btnDelete').addEventListener('click', (event) => {
-//         console.log("hello world");
-// });

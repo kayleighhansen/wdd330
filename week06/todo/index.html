@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>To Do List</h1>
+        <p><span id="counter"></span></p>
+    </header>
+    <main>
+        <section class="special-effects">
+            <button class="light-dark-mode">&#9788;</button>
+        </section>
+        <section class="task-list">
+            <ul>
+
+            </ul>
+            <div class="btnCategory">
+                <button id="all">All</button>
+                <button id="new">New</button>
+                <button id="done">Completed</button>
+            </div>
+        </section>
+        <section class="user-input">
+            <form>
+                <input type="color" id="taskColor" class="color-input" name="color" required>
+                <input type="text" id="taskContent" class="task-input" name="content" placeholder="New Task" required>
+                <button id="btnSave" class="btnSave">+</button>
+            </form>
+        </section>
+    </main>
+
+    
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
