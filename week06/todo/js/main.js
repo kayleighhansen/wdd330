@@ -5,7 +5,62 @@ let tasks = [];
 // check local Storage
 if (localStorage.getItem('tasks')){
     tasks = JSON.parse(localStorage.getItem('tasks'));
+    console.log(tasks[0]);
 }
+
+// output existing tasks
+function setTaskList(){
+    if (tasks.length > 0) {
+        let taskList = document.querySelector('ul');
+        taskList.innerHTML = '';
+
+        tasks.forEach((task) => {
+            taskList.innerHTML += 
+            `<li class="task-li">
+                <label class="check-box" ${task.TaskCompleted ? 'id="completed"' : ""}>
+                    <input type="checkbox" value="${task.TaskId}" ${task.TaskCompleted ? "checked" : ""}>
+                    ${task.TaskDescription}
+                    <span class="checkmark"></span> 
+                </label>
+                <button class="btnDelete" onclick=""> X </button>
+            </li>`
+        });
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(
+            checkbox => {
+                checkbox.addEventListener('change' , (event)=> {
+                    const id = event.target.value;
+                    const task = tasks.find(task => task.TaskId == id);
+                    task.TaskCompleted = !task.TaskCompleted;
+                    
+                    console.log(task.TaskCompleted);
+
+                    localStorage.setItem("tasks" , JSON.stringify(tasks));
+                });
+            }
+        );
+    }
+}
+setTaskList();
+
+// save button 
+const svbutton = document.querySelector('#btnSave');
+svbutton.addEventListener('click', (event) =>{
+    // prevent form submission
+    event.preventDefault();
+
+    const contentElement = document.querySelector('#taskContent').value;
+    const newTask = new Task(contentElement);
+    tasks.push(newTask);
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    setTaskList();
+
+    // reset textbox
+    contentElement.value = '';
+});
 
 // set counter
 let counter = document.querySelector('#counter');
@@ -20,66 +75,10 @@ else  {
     counter.innerHTML += "0 Tasks Left";
 }
 
-// set task color
-const color = document.querySelector('#taskColor');
-
-
-// output existing tasks
-function setTaskList(){
-    if (tasks.length > 0) {
-        let taskList = document.querySelector('ul');
-        taskList.innerHTML = '';
-
-        tasks.forEach((task) => {
-                taskList.innerHTML += 
-                `<li class="task-div">
-                    <label class="check-box" ${task.TaskCompleted ? 'id="completed"' : ""}>
-                        <input type="checkbox" value="${task.TaskId}" ${task.TaskCompleted ? "checked" : ""}>
-                        ${task.TaskDescription}
-                        <span class="checkmark"></span> 
-                    </label>
-                    <button class="btnDelete" onclick=""> X </button>
-                </li>`
-            }
-        );
-
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(
-            checkbox => {
-                checkbox.addEventListener('change' , (event)=> {
-                    const id = event.target.value;
-                    const task = tasks.find(task => task.TaskId == id);
-                    task.TaskCompleted = !task.TaskCompleted;
-                    console.log(task.TaskCompleted);
-
-                    localStorage.setItem("tasks" , JSON.stringify(tasks));
-                });
-            }
-        );
-    }
-}
-setTaskList();
-
-// save button 
-const button = document.querySelector('#btnSave');
-button.addEventListener('click', () =>{
-    event.preventDefault();
-
-    const contentElement = document.querySelector('#taskContent');
-    const newTask = new Task(contentElement.value);
-    tasks.push(newTask);
-
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-
-    setTaskList();
-    contentElement.value = '';
-});
-
 // dark mode 
 const lightDark = document.querySelector('.light-dark-mode');
 
 lightDark.addEventListener('click', () =>{
-    event.preventDefault();
 
     document.body.style.backgroundColor = 'black';
 
@@ -95,35 +94,35 @@ lightDark.addEventListener('click', () =>{
         label[i].style.color = "white";
     }
 
-    const li = document.querySelectorAll('.task-div');
+    const li = document.querySelectorAll('.task-li');
     var i;
     for (i = 0; i < label.length; i++) {
         li[i].style.border = "1px solid white";
     }
 });
 
-// light mode button
-const Light = document.querySelector('.dark-mode');
-Light.addEventListener('click', () =>{
-    event.preventDefault();
+// // light mode button
+// const Light = document.querySelector('.dark-mode');
+// Light.addEventListener('click', () =>{
+//     event.preventDefault();
 
-    document.body.style.backgroundColor = 'white';
+//     document.body.style.backgroundColor = 'white';
 
-    document.querySelector('h1').style.color = "black";
-    document.querySelector('p').style.color = "black";
-    document.querySelector('form').style.border = "1px solid black";
+//     document.querySelector('h1').style.color = "black";
+//     document.querySelector('p').style.color = "black";
+//     document.querySelector('form').style.border = "1px solid black";
 
-    document.querySelector('.dark-mode').className = "light-dark-mode";
+//     document.querySelector('.dark-mode').className = "light-dark-mode";
     
-    const label = document.querySelectorAll('label.check-box');
-    var i;
-    for (i = 0; i < label.length; i++) {
-        label[i].style.color = "black";
-    }
+//     const label = document.querySelectorAll('label.check-box');
+//     var i;
+//     for (i = 0; i < label.length; i++) {
+//         label[i].style.color = "black";
+//     }
 
-    const li = document.querySelectorAll('.task-div');
-    var i;
-    for (i = 0; i < label.length; i++) {
-        li[i].style.border = "1px solid black";
-    }
-});
+//     const li = document.querySelectorAll('.task-div');
+//     var i;
+//     for (i = 0; i < label.length; i++) {
+//         li[i].style.border = "1px solid black";
+//     }
+// });
