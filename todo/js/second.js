@@ -51,7 +51,7 @@ function setToDoList() {
 
 // add new ToDos
 
-console.log(todos);
+// console.log(todos);
 
 const button = document.querySelector('button');
 
@@ -78,22 +78,33 @@ button.addEventListener('click', (event) => {
 
 // delete button 
 
-const deleteButton = document.querySelectorAll('input.delete');
-console.log(deleteButton);
+console.log("WHYYY");
+
+const y = document.querySelectorAll('.delete');
+y.forEach(
+    y => {
+        y.addEventListener('click', (event) => {
+            console.log(y);
+            // get id of checkbox that was clicked
+            const id = y.id;
+
+            // find todo in todo array that was clicked
+            const z = todos.find(
+                todo => {
+                    if (y.id == todo.Id) {
+                        console.log('delete ' + y.id)
+                        const b_delete = document.getElementById(y.id);
+                        todos.remove(y.id);
 
 
-// deleteButton.addEventListener('click', (event) => {
-//     event.preventDefault();
 
-//     const deleteId = deleteButton.id;
-//     console.log(deleteId);
+                        // todos = document.querySelectorAll();
+                        // console.log(todos);
+                    }
 
-//     const deletedIndex = todos.IndexOf(x => deleteId == deletedIndex);
-//     todos.splice(deletedIndex, 1);
+                });
+        });
+    }
+)
 
-//     localStorage.setItem('todos', JSON.stringify(todos));
-//     setToDoList();
-
-// });
-
-
+// console.log(y);
