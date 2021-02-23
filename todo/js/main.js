@@ -159,7 +159,6 @@ button_all.addEventListener('click', (event) => {
     console.log("all");
 
     setToDoList();
-
 })
 
 const button_dark = document.querySelector('#btnDarkMode');
@@ -168,8 +167,6 @@ button_dark.addEventListener('click', (event) => {
 
     const darkBody = document.body;
     darkBody.classList.toggle("dark-mode");
-
-
 })
 
 
