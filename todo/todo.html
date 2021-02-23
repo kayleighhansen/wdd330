@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
+<body> 
     <main>
-        <h1>Todo</h1>
+        <h1>Stuff You Gotta Do</h1>
         <h2><span id="counter"></span></h2>
-        <section>
-            <ul>
+        <div class="special-effects">
+            <input type="button" value="&#9788;" id="btnDarkMode">
+        </div>
+        <div class="center-tasks-container">
+            <section class="tasks-container">
+                <ul>
 
-            </ul>
-        </section>
-        <!-- <section>   
-            <button id="btnNew" onclick="btnNew()">New</button>
-            <button id="btnNew" onclick="btnCompleted()">Completed</button>
-            <button id="btnNew" onclick="btnAll()">All</button>
-        </section> -->
-        <section>
-            <form>
-                <div>
-                    <input type="text" id="content" name="content" placeholder="ToDo Text">
-                    <button id ="save">+</button>
-                </div>
-            </form>
-        </section>        
-        
+                </ul>
+            </section>
+        </div>
+        <div class="center-tasks-container">
+            <section class="category-container">   
+                <button class="category-btn" id="btnNew">New</button> 
+                <button class="category-btn" id="btnCompleted">Completed</button>
+                <button class="category-btn" id="btnAll">All</button>
+            </section>
+        </div>
+        <div class="center-tasks-container">
+            <section class="input-container">
+                <form>
+                    <div>
+                        <input type="text" id="content" name="content" placeholder="ToDo Text">
+                        <button id ="btnSave">+</button>
+                    </div>
+                </form>
+            </section>        
+        </div>
     </main>
     <script src="./js/main.js" type="module"></script>
 </body>

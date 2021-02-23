@@ -1,7 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background-color: rgb(228, 219, 219);
+
+}
+
+/* Elements */
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    margin: 30px;
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 0px;
+} 
+
+label {
+    font-size: 20px;
+}
+
+/* Classes */
 .completed {
     text-decoration: line-through;
 }
 
-ul {
-    list-style: none;
+.center-tasks-container {
+    display: flex;
+    justify-content: center;
+}
+
+.delete {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    background: none;
+    border: none;
+}
+
+.tasks-container {
+    margin-top: 40px;
+}
+
+.tasks-container li {
+    padding: 0 10px;
+    border: 1px solid black;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 15px;
+    background: none;
+    border: none;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    min-width: 320px;
+}
+
+.input-container {
+    position: absolute;
+    bottom: 8%;
+}
+
+.dark-mode {
+    background-color: rgb(52, 52, 52);
+    color: white;
+}
+
+.dark-mode li {
+    color: white;
+    border: 1px solid white;
+}
+
+.dark-mode input {
+    color: white;
+    border: 1px solid white;
+}
+
+.dark-mode button {
+    color: white;
+}
+
+.dark-mode .category-container {
+    color: white;
+    border: 1px solid white;
+}
+
+.special-effects {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+input#btnDarkMode {
+    font-size: 45px;
+    background: none;
+    border: none;
+}
+
+/* Ids */
+
+input[type='checkbox'] {
+    margin-top: 15px;
+}
+
+input#content {
+    height: 35px;
+    width: 250px;
+}
+
+button#btnSave {
+    height: 38px;
+    width: 35px;
+    background: none;
+    border: 1px solid
 }

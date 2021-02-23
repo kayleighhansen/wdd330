@@ -8,6 +8,7 @@ if (localStorage.getItem('todos')) {
 
 // output existing ToDos
 setToDoList();
+setTopCounter();
 
 function setToDoList() {
     if (todos.length > 0) {
@@ -17,7 +18,7 @@ function setToDoList() {
         todos.forEach((todo) => {
             todoList.innerHTML += 
             `<li id="${todo.Id}">
-                <label ${todo.Completed ? 'class="completed"' : ''}>
+                <label ${todo.Completed ? 'class="completed"' : 'class="not-completed"'}>
                     <input type="checkbox" value="${todo.Id}" ${todo.Completed ? "checked" : ""}>
                     ${todo.Content}
                 </label>
@@ -39,10 +40,13 @@ function setToDoList() {
                     // update completed
                     todo.Completed = !todo.Completed;
 
+                    setTopCounter();
+
+                    console.log("counter");
+
                     // save todo list
                     localStorage.setItem("todos", JSON.stringify(todos));
-
-                    setToDoList();
+                    
                 });
             }
         );
@@ -51,7 +55,7 @@ function setToDoList() {
 
 // add new ToDos
 
-const button = document.querySelector('button');
+const button = document.querySelector('#btnSave');
 
 button.addEventListener('click', (event) => {
     // prevent form submission
@@ -76,6 +80,7 @@ button.addEventListener('click', (event) => {
 
 // delete button 
 
+setToDoList();
 const y = document.querySelectorAll('.delete');
 y.forEach(
     y => {
@@ -87,57 +92,84 @@ y.forEach(
             const z = todos.find(
                 todo => {
                     if (y.id == todo.Id) {
-                        console.log('delete ' + y.id)
+
                         const b_delete = document.getElementById(y.id);
 
+                        todos.splice(b_delete, 1);
+
+                        localStorage.setItem('todos', JSON.stringify(todos));
+
                         b_delete.remove();
-                        console.log(todos);
-
-                        // todos = document.querySelectorAll(y.id);
-                        // setToDoList();
-
                     }
-
                 });
         });
     }
 )
 
 // counter at the top
+function setTopCounter() {
+    const total =  document.querySelectorAll('li').length;
+    const completed = document.querySelectorAll('.completed').length;
+    const left = total - completed;
+    console.log(left);
 
-// const total =  document.querySelectorAll('li').length;
-// const completed = document.querySelectorAll('.completed').length;
-// const left = total - completed;
-// console.log(left);
+    if (left == 1) {
+        document.querySelector('#counter').innerHTML = left + ' Task Left';
+    } else {
+        document.querySelector('#counter').innerHTML = left + ' Tasks Left';
+    }
+}
 
-// if (left == 1) {
-//     document.querySelector('#counter').innerHTML = left + ' Task Left';
-// } else {
-//     document.querySelector('#counter').innerHTML = left + ' Tasks Left';
-// }
+// setTopCounter();
 
-// function btnNew() {
-//     newTodos = []
-    
-//     // select todos with completed false
+// NEW BUTTON
+const button_new = document.querySelector('#btnNew');
+button_new.addEventListener('click', (event) => {
+    console.log("new");
+    setToDoList();
 
-//     // display newTodos
+    const completed = document.querySelectorAll('.completed');
 
-//     // display newTodos
-// }
+    completed.forEach(
+        completed => {
+            console.log(completed);
+            completed.parentNode.style.display = "none";
+        })
 
-// function btnCompleted() {
-//     completedTodos = []
-    
-//     // select todos with completed true
+})
 
-//     // display completedTodos
+// COMPLETED BUTTON
+const button_completed = document.querySelector('#btnCompleted');
+button_completed.addEventListener('click', (event) => {
+    console.log("completed");
+    setToDoList();
 
-//     // display completedTodos
-// }
+    const notCompleted = document.querySelectorAll('.not-completed');
 
-// function btnAll() {
+    notCompleted.forEach(
+        notCompleted => {
+            console.log(notCompleted);
+            notCompleted.parentNode.style.display = "none";
+        })
+})
 
-//     // display all todos
-// }
+// ALL BUTTON
+const button_all = document.querySelector('#btnAll');
+button_all.addEventListener('click', (event) => {
+    console.log("all");
+
+    setToDoList();
+
+})
+
+const button_dark = document.querySelector('#btnDarkMode');
+button_dark.addEventListener('click', (event) => {
+    console.log("dark");
+
+    const darkBody = document.body;
+    darkBody.classList.toggle("dark-mode");
+
+
+})
+
 
