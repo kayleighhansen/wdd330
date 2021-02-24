@@ -24,6 +24,9 @@ const element_3 = document.querySelector('ol');
 element_3.appendChild(notes_button);
 
 
+
+
+
  //navigation bar - creates all of the li's from week folders
  let ol = document.querySelector('.dropdown-container');
 

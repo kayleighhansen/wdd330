@@ -68,13 +68,18 @@ main {
 font-family: 'Roboto', sans-serif;
 text-decoration: none;
 padding: 10px 5px;
-font-size: 14px;
+font-size: 18px;
 color: white;
+}
+
+.sidenav li {
+    padding: 10px 0px;
+    font-size: 15px;
 }
 
 .dropdown-btn {
     border-bottom: 1px solid;
-    font-size: 14px;
+    font-size: 18px;
     width: 100px;
     display: block;
     background: none;
@@ -101,8 +106,6 @@ color: white;
 
 #projects {
     margin-left: 20px;
-    display: flex;
-    justify-content: center;
 }
 
 footer {
