@@ -1,0 +1,44 @@
+* {
+    background-color: black;
+    color: white;
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: yellow;
+}
+
+h2 {
+    font-size: 15px;
+    text-align: center;
+    color: yellow;
+}
+
+section {
+    border: 1px solid white;
+    margin: 0 20%;
+    border-radius: 12px;
+}
+
+section div {
+    margin: 14px 15%;
+    font-size: 18px;
+}
+
+.buttons {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+button {
+    height: 30px;
+    width: 30%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: 2px solid black;
+}

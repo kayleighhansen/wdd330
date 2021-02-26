@@ -34,8 +34,166 @@
                 <li>Call() function can run one individual function: Say_Hello.call()</li>
                 <li>=> () - temporary function</li>
                 <li>AJAX makes pages partially reload pages</li>
-                
             </ul>
+            <pre>
+                <code>
+                    function sayHello(greeting='Hello'){
+                        return `${ greeting }, my name is ${ this.name }`;
+                    }
+                    sayHello.call(clark, 'How do you do');
+                    << 'How do you do, my name is Clark'
+                    sayHello.call(bruce);
+                    << 'Hello, my name is Bruce'
+                </code>
+              </pre>
+              <pre>
+                  <code>
+                    function square(x) {
+                        return x*x;
+                    }
+
+                    square.call(null, 4)
+                    << 16
+                    square.description = 'Squares a number that is provided as an argument'
+                    << 'Squares a number that is provided as an argument'
+                  </code>
+              </pre>
+              <li>Caching properties makes your calcutions faster</li>
+              <pre>
+                  <code>
+                    function square(x){
+                        square.cache = square.cache || {};
+                        if (!square.cache[x]) {
+                            square.cache[x] = x*x;
+                        }
+                        return square.cache[x]
+                    }
+
+                    square(3);
+                    << 9
+                    square(-11);
+                    << 121
+                    square.cache;
+                    << {"3": 9, "-11": 121}
+                  </code>
+              </pre>
+              <li>Immediately Invoked Function Expression: IIFE</li>
+              <pre>
+                  <code>
+                    (function(){
+                        const temp = 'World';
+                        console.log(`Hello ${temp}`);
+                        })();
+                        << 'Hello World'
+                  </code>
+              </pre>
+              <p>* remember that the scope of the temp variable only exists in the function</p>
+              <pre>
+                  <code>
+                    {
+                        const name = 'Peter Parker'; // This might be obtained from a cookie in reality
+                        const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday', 'Friday','Saturday'];
+                        const date = new Date(),today = days[date.getDay()];
+                        console.log(`Welcome back ${name}. Today is ${today}`);
+                    }
+                    << 'Welcome back Peter Parker. Today is Tuesday'
+                  </code>
+              </pre>
+              <li>Strict Mode:</li>
+              <pre>
+                  <code>
+                    (function() {
+                        'use strict';
+                    // All your code would go inside this function
+                    })();
+                  </code>
+              </pre>
+              <li>Self Contained Blocks</li>
+              <pre>
+                  <code>
+                    (function() {
+                        // block A
+                        const name = 'Block A';
+                        console.log(`Hello from ${name}`);
+                        }());
+                        (function() {
+                        // block B
+                        const name = 'Block B';
+                        console.log(`Hello from ${name}`);
+                    }());
+                    <<  Hello from Block A
+                        Hello from Block B
+                  </code>
+              </pre>
+              <p>* we can see that the scope stays in the block</p>
+              <li>Functions that rewrite themselves</li>
+              <pre>
+                  <code>
+                    function party(){
+                        console.log('Wow this is amazing!');
+                        party = function(){
+                            console.log('Been there, got the T-Shirt');
+                        }
+                    }
+                    party();
+                    << 'Wow this is amazing!'
+                    party();
+                    << 'Been there, got the T-Shirt'
+                    party();
+                    << 'Been there, got the T-Shirt'
+                  </code>
+              </pre>
+              <li>Recusive Functions</li>
+              <pre>
+                  <code>
+                    function collatz(n, sequence=[n]) {
+                        if (n === 1){
+                            return `Sequence took ${sequence.length} steps. It was ${sequence}`;
+                        }
+                        if (n%2 === 0) {
+                            n = n/2;
+                        } else { 
+                            n = 3*n + 1;
+                        }
+                        return collatz(n,[...sequence,n]);
+                    }
+                    collatz(18);
+                    << 'Sequence took 21 steps. It was 18,9,28,14,7,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2,1'
+                  </code>
+              </pre>
+              <li>AJAX</li>
+              <p>* Ajax allows JavaScript to request resources from a server on behalf of the client. </p>
+              <p>* The resources requested are usually JSON data or small fragments of text or HTML rather than a whole web page.</p>
+              <p>* Typically this involves using a server-side language, such as PHP, Ruby, Node.js, or .NET to serve the data response following an Ajax request (usually from a back-end database). </p>
+              <p>* Asychonous Javascript XML</p>
+              <p>* Application Programmin Interfact: API</p>
+
+              <pre>
+                  <code>
+                    fetch('https://example.com/data')
+                    .then( // code that handles the response )
+                    .catch( // code that runs if the server returns an error )
+                  </code>
+              </pre>
+              <pre>
+                  <code>
+                    const url = 'https:example.com/data';
+                    fetch(url)
+                    .then((response) => {
+                        if(response.ok) {
+                            return response;
+                        }
+                        throw Error(response.statusText);
+                    })
+                    .then( response => // do something with response )
+                    .catch( error => console.log('There was an error!') )
+                  </code>
+              </pre>
+              <p>Response Properties:</p>
+              <p>* Headers</p>
+              <p>* Url</p>
+              <p>* Redirected</p>
+              <p>* Type</p>
             <hr>
             <h2>Code:</h2>
             <li><a href="team/index.html">Week 07 Code</a></li>
