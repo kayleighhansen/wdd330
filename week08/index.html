@@ -22,6 +22,67 @@
         <section class="content">
             <h1>Week 08</h1>
 
+            <h2>Remember this:</h2>
+                <li>Transform property let's you move objects around the page.</li>
+            <h3>Translation</h3>
+                <li>similar position relative</li>
+                <li>transform: translate(45px, -45px);</li>
+                <li>-webkit-transform is for older browers</li>
+                <li>transforms don't work on inline elements</li>
+                <li>subsititute for margin-right or something</li>
+            <h3>Scaling</h3>
+                <li>transform: scale(1.5, 0.25);</li>
+                <li>makes an item larger</li>
+                <li>good for element:hover</li>
+                <li>transform: translateX(40px) scale(1.5);</li>
+                <li>don't declare a new transform because the first would override the second</li>
+                <li>does not effect the document flow</li>
+            <h3>Rotation</h3>
+                <li>roates the element by a certain degree</li>
+                <li>transform: rorate(10deg) translateX(40px) scale(1.5);</li>
+            <h3>Skew</h3>
+                <li>specefies a skew on the x and y axis.</li>
+                <li>transform: skew(15deg, 4deg);</li>
+            <h3>Origin of the Transform</h3>
+                <li>transform-origin: 0 0;</li>
+                <li>changes the point where the transform is rotating</li>
+            <h3>Order of the Transform</h3>
+                <li>the order matters, follow the steps</li>
+            <h3>Watch for support for internet explorer 8 and earlier</h3>
+            <hr>
+            <h3>Transitions</h3>
+                <p>transitions give us the ability to create animations</p>
+                <p>helps our pages feel more dynamic</p>
+                <li>transition-property: transform, color</li>
+                <li>duration: length of the animation</li>
+                <li>transition-timing-function: pace of the animation</li>
+                <li>cubic-bezier: same as the timing-function, just uses four parameters</li>
+                <li>transition-delay: allows the transition to wait before starting</li>
+                <li>combine them all together - transition: transform 0.2s ease-out 50ms;</li>
+                <li>transitionend event ends the transition</li>
+            <h3>Animations</h3>
+                <li>keyframe animations defines the start and end point</li>
+                <li>@-webkit-keyframes myAnimation { from{} to{}}-- add this for older browsers</li>
+                <li>animation-name: necessary for the animation to work, be careful that it contains a unique name</li>
+                <li>animation-duration: length of the entire animation</li>
+                <li>animation-timing-function: can be linear, ease, ease-in and more!</li>
+                <li>animation-iteration-count: how many times the animation runs</li>
+                <li>animaiton-direction: reverse or alternate, default is normal</li>
+                <li>animation-delay: how many milisections the browser should wait to start</li>
+            <hr>
+            <h2>Canvas, SVG, Drag and Drop</h2>
+                <p>Making the page even more dynamic</p>
+            <h2>Canvas</h2>
+                <li>drawing two dimensional images</li>
+                <li>make a default statement just in case the browser is too old to handle canvas</li>
+                <li>color: context.strokeStyle = 'color';</li>
+                <li>background color: context.fillStyle = 'color';</li>
+                <li>rectangle: context.fillRext(//size of the rectange//) context.strokeReact(//same color//)</li>
+                <li>rectangles work on a grid system</li>
+                <li>fillStyle: you can use a pattern, gradient, or color</li>
+                <li>drawing requires a function</li>
+                </code>
+                <li>'...' : this signifies an anonymous function</li>
             <hr>
             <h2>Code</h2>
             <li><a href="code/index.html">Week 08 Code</a></li>
