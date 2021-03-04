@@ -63,6 +63,10 @@ element_3.appendChild(notes_button);
         lable: "week08",
         url: "../week08/index.html"
     }
+    {
+        lable: "week09",
+        url: "../week09/index.html"
+    }
 ];
 
 console.log(ol.className);
