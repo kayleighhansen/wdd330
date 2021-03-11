@@ -1,9 +1,8 @@
-import {Hexagon} from './hexagon.js';
-let hexagons = [];
+// import {Hexagon} from './hexagon.js';
+// let hexagons = [];
 
 // set the home screen
 setMain();
-
 
 
 // home screen with options to see the user's canvas or begin a new day
@@ -16,12 +15,24 @@ function setMain() {
     <div class="section-container">
     <section class="home-screen-section">
         <button class="home-btn" id="setMood">New Day &#10140;</button>
-        <button class="home-btn" id="setMoodCanvas">See My Canvas &#10140;</button>
+        <button class="home-btn" id="setCanvas">See My Canvas &#10140;</button>
     </section>
     <div>
     `
+
+    // buttons that go to new views
+    const moodBtn = document.querySelector('#setMood');
+    moodBtn.addEventListener('click', (event) => {
+        setMood();
+    })
+
+    const canvasBtn = document.querySelector('#setCanvas');
+    canvasBtn.addEventListener('click', (event) => {
+        setCanvas();
+    })
 }
 
+// set the mood input view
 function setMood() {
     const main = document.querySelector('main');
     let today = new Date();
@@ -46,11 +57,19 @@ function setMood() {
     </section>
 
     <div class="next-page">
-        <h2 class="next-page-button" onclick="setGoodDay()">Next Page &#10140; </h2>
+        <h2 class="next-page-button" id="setNews">Next Page &#10140; </h2>
     </div>`;
+
+    // button for the next page
+    const newsBtn = document.querySelector('#setNews');
+    newsBtn.addEventListener('click', (event) => {
+        setNews();
+    })
+
 }
 
-function setGoodDay() {
+// set the good news view
+function setNews() {
     const main = document.querySelector('main');
 
     let liIndex = 1;
@@ -69,7 +88,7 @@ function setGoodDay() {
             </li>
         </section>
         <div class="next-page">
-            <h2 class="next-page-button2" onclick="setMoodCanvas()">Next Page <span class="arrow">&#10140;</span> </h2>
+            <h2 class="next-page-button2" id="setCanvas">Next Page &#10140; </h2>
         </div>
     `;
 
@@ -88,9 +107,15 @@ function setGoodDay() {
         console.log('hello');
         
     });
+
+    const newsBtn = document.querySelector('#setCanvas');
+    newsBtn.addEventListener('click', (event) => {
+        setCanvas();
+    })
 }
 
-function setMoodCanvas() {
+// set the canvas of hexagon section and good news
+function setCanvas() {
     const main = document.querySelector('main');
         main.innerHTML = '';
 
@@ -147,9 +172,15 @@ function setMoodCanvas() {
         </section>
         </div>
         <div class="section-container">
-        <button class="home-btn" onclick="setMain()">Go Home</button
+        <button class="home-btn" id="setMain">Go Home</button
         </div>
         `;
+
+        // home button
+        const newsBtn = document.querySelector('#setMain');
+        newsBtn.addEventListener('click', (event) => {
+            setMain();
+        })
 }
 
 
