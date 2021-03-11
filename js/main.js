@@ -66,6 +66,10 @@ element_3.appendChild(notes_button);
     {
         label: "week 09",
         url: "../week09/index.html"
+    },
+    {
+        label: "week 10",
+        url: "../week10/index.html"
     }
 ];
 

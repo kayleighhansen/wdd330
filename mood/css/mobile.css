@@ -30,6 +30,16 @@ h2 {
     justify-content: center;
 }
 
+.today-h3 {
+    text-align: center;
+    color: white; 
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: underline;
+    margin-top: 30px;
+    font-size: 20px;
+
+}
+
 .hexagon {
     height: 60px;
     width: 60px;
