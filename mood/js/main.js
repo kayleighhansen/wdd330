@@ -1,17 +1,23 @@
-// import {Hexagon} from './hexagon.js';
-// let hexagons = [];
+import {Hexagon} from './hexagon.js';
+let hexagons = [];
 
+console.log(hexagons);
 // set the home screen
 setMain();
 
 
 // home screen with options to see the user's canvas or begin a new day
 function setMain() {
+
     const main = document.querySelector('main');
     main.innerHTML = '';   
     main.innerHTML += `
     <h1>Welcome to Mood Tracker</h1>
     
+    <div class="section-container">
+    <img src="css/logo.png" alt="logo">
+    </div>
+
     <div class="section-container">
     <section class="home-screen-section">
         <button class="home-btn" id="setMood">New Day &#10140;</button>
@@ -19,7 +25,6 @@ function setMain() {
     </section>
     <div>
     `
-
     // buttons that go to new views
     const moodBtn = document.querySelector('#setMood');
     moodBtn.addEventListener('click', (event) => {
@@ -31,6 +36,7 @@ function setMain() {
         setCanvas();
     })
 }
+
 
 // set the mood input view
 function setMood() {
@@ -68,6 +74,7 @@ function setMood() {
 
 }
 
+
 // set the good news view
 function setNews() {
     const main = document.querySelector('main');
@@ -75,7 +82,7 @@ function setNews() {
     let liIndex = 1;
 
     main.innerHTML = '';
-    main.innerHTML += `<h1>Good day?</h1>
+    main.innerHTML += `<h1>Tell me something good!</h1>
         <div class="input-div">
             <input class="good-input">
             <button class="good-submit">&#10148;</button>
@@ -92,29 +99,33 @@ function setNews() {
         </div>
     `;
 
+    // submit button for the good news list 
     const inputButton = document.querySelector('.good-submit');
     inputButton.addEventListener('click', (event) => {
         liIndex += 1;  
         event.preventDefault();
         const contentElement = document.querySelector('.good-list');
-        contentElement.innerHTML += `<li class="good-li" id="${liIndex}"><label>Programmed a lot</label><input type="button" value="x" class="delete"></button></li>`
+        contentElement.innerHTML += `<li class="good-li" id="${liIndex}"><label>Programmed a lot</label><input type="button" value="x" class="delete"></button></li>`;
+        // TODO: save to localStorage
     });
 
+    // delete button for the good news list
     const deleteButton = document.querySelector('.delete');
     deleteButton.addEventListener('click', (event) => {
         event.preventDefault();
-            
+            // TODO: complete the delete button function
         console.log('hello');
         
     });
 
+    // button calls the set canvas function, moves on to the main display 
     const newsBtn = document.querySelector('#setCanvas');
     newsBtn.addEventListener('click', (event) => {
         setCanvas();
     })
 }
 
-// set the canvas of hexagon section and good news
+// set the canvas of hexagon section and good news, main display
 function setCanvas() {
     const main = document.querySelector('main');
         main.innerHTML = '';
@@ -182,8 +193,3 @@ function setCanvas() {
             setMain();
         })
 }
-
-
-
-
-
