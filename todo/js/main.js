@@ -23,7 +23,8 @@ function setToDoList() {
                     ${todo.Content}
                 </label>
                 <input type="button" id="${todo.Id}" value="x" class="delete"></button>
-             </li>`;
+             </li>
+             `;
         });  
 
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
