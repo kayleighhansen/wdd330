@@ -32,7 +32,27 @@
                 <li>Variables created without const or var</li>
                 <li>Accessed through: window.[variable name]</li>
                 <li>Check first that the global variable is really set</li>
-
+            <h3>Dialogs</h3>
+                <li>window.confirm('') -- creates a confirm message.</li>
+                <li>window.prompt('') -- creates a pop up message with an input box</li>
+                <li>window.navigator.userAgent -- tells you what browser the user is using</li>
+                <li>window.location.href -- tells you what the url of the current page is.</li>
+                <li>window.location.protocal -- tells you is the url is secure or not</li>
+                <li>window.location.pathname -- returns the path name</li>
+                <li>windo.history.length -- returns how many times the user has visited that page</li>
+                <li>window.history.go() -- goes forward, reloads current page, or goes to the next page</li>
+                <li>window.open('') -- opens up new page in a popup</li>
+                <li>window.screen.height -- returns the height of the screen</li>
+            <h3>Cookies</h3>
+                <li>document.cookie = '' -- set cookie</li>
+                <li>document.cookie -- returns the value of the cookie</li>
+                <li>const cookies = document.cookie.split("; "); -- splits cookie into values</li>
+                <li>document.cookie = `name=Batman; expires=${ expiryDate.toUTCString()}`; -- set expiry date</li>
+                <li>document.cookie = 'name=Batman; secure'; -- make the cookie secure</li>
+                <li>document.cookie = 'name=Batman; expires=Thu, 01 Jan 1970 00:00:01 GMT'; -- delete a cookie</li>
+            <h3>Set Timeout()</h3>
+                <li>window.setTimeout( () => alert("Time's Up!"), 3000); -- set a timer</li>
+                <li>const summon = window.setInterval(chant,1000); -- run a function every time the interval is up</li>
             <hr>
             <h2>Code</h2>
             <li><a href="code/index.html">Week 09 Code</a></li>
