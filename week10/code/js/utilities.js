@@ -5,7 +5,6 @@ export async function getJSON(url) {
             throw Error(response.statusText);
         }
         else {
-            //console.log(response.json());
             return response.json();
         }
     }
