@@ -8,8 +8,8 @@ body {
 }
 
 main {
-    border: 1px solid black;
-    margin: 50px;
+    border: 2px dashed black;
+    margin: 30px;
 }
 
 h1 {
@@ -19,7 +19,7 @@ h1 {
 }
 
 ul {
-    margin-left: 20%;
+    margin-left: 10%;
 }
 
 li {
