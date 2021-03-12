@@ -47,6 +47,8 @@ function setToDoList() {
 
                     // save todo list
                     localStorage.setItem("todos", JSON.stringify(todos));
+
+                    
                     
                 });
             }

@@ -1,8 +1,8 @@
 export class Hexagon {
-    constructor(content) {
+    constructor(content, color) {
         this.Id = Date.now();
         this.Content = content;
-        this.Color = 0;
-        this.Date = 0;
+        this.Color = color;
+        this.Date = new Date();
     }
 }
