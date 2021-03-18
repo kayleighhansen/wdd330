@@ -46,43 +46,43 @@ h2 {
     box-shadow: 2px 2px 2px rgba(162, 161, 161, 0.6);
 }
 
-#hexagon1 {
+#red {
     background-color: #FF914D;
 }
 
-#hexagon1:hover {
+#red:hover {
     background-color: #ee6916;
 }
 
-#hexagon2 {
+#orange {
     background-color: #FFBD59;
 }
 
-#hexagon2:hover {
+#orange:hover {
     background-color: #f29f22;
 }
 
-#hexagon3 {
+#yellow {
     background-color: #C9E265;
 }
 
-#hexagon3:hover {
+#yellow:hover {
     background-color: #a7c238;
 }
 
-#hexagon4 {
+#green {
     background-color: #7ED957;
 }
 
-#hexagon4:hover {
+#green:hover {
     background-color: #5eb539;
 }
 
-#hexagon5 {
+#black {
     background-color: #008037;
 }
 
-#hexagon5:hover {
+#black:hover {
     background-color: #00652c;
 }
 
