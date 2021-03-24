@@ -1,39 +1,70 @@
-import {Hexagon} from './hexagon.js';
+/* TODO:
+
+Mood Page: 
+    - Change colors when the new Hex Color is set
+    - Back Button
+
+News Page:
+    - Back Button 
+    - Delete Button
+
+Canvas Page:
+    - Display Canvas
+    - Display News
+
+*/
+
+import { Hexagon } from './hexagon.js';
 let hexagons = [];
 
 console.log(hexagons);
 
 setMain();
+const homebtn = document.querySelector('#home-btn');
+homebtn.addEventListener('click', event => {
+    console.log('home');
+    setMain();
+})
+
+const nextbtn = document.querySelector('#next-btn');
+nextbtn.style.display = 'inline';
+nextbtn.addEventListener('click', event => {
+    console.log('next');
+    setMood();
+})
 
 // MAIN VIEW //
 function setMain() {
 
     const main = document.querySelector('main');
-    main.innerHTML = '';   
+    main.innerHTML = '';
     main.innerHTML += `
     <h1>Welcome to Mood Tracker</h1>
     
     <div class="section-container">
-    <img src="css/logo.png" alt="logo">
+        <img src="css/logo.png" alt="logo">
     </div>
 
-    <div class="section-container">
-    <section class="home-screen-section">
-        <button class="home-btn" id="setMood">New Day &#10140;</button>
-        <button class="home-btn" id="setCanvas">See My Canvas &#10140;</button>
+    <section class="instructions">
+        <p>This is a personal journal where you can keep track of your 
+        moods over time.</p>
+        
+        <p>Pick a color, think about something good to 
+        remember for darker times, and before you know it, you'll have 
+        a beautiful canvas?</p>
+
+        <p>Press the next arrow to get started</p>
     </section>
-    <div>
-    `
-    // buttons that go to new views
-    const moodBtn = document.querySelector('#setMood');
-    moodBtn.addEventListener('click', (event) => {
+    `;
+
+    const nextbtn = document.querySelector('#next-btn');
+    nextbtn.addEventListener('click', event => {
+        console.log('next');
         setMood();
     })
 
-    const canvasBtn = document.querySelector('#setCanvas');
-    canvasBtn.addEventListener('click', (event) => {
-        setCanvas();
-    })
+    nextbtn.style.display = 'inline';
+
 }
 
 
@@ -43,7 +74,7 @@ function setMood() {
     const main = document.querySelector('main');
     let today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
     const yyyy = today.getFullYear();
     today = mm + '/' + dd + '/' + yyyy;
 
@@ -60,39 +91,37 @@ function setMood() {
         <div id="yellow" class="hexagon"></div>
         <div id="green" class="hexagon"></div>
         <div id="black" class="hexagon"></div>
-    </section>
-
-    <div class="next-page">
-        <h2 class="next-page-button" id="setNews">Next Page &#10140; </h2>
-    </div>`;
+    </section>`;
 
     setColor();
 
-    // button for the next page
-    const newsBtn = document.querySelector('#setNews');
-    newsBtn.addEventListener('click', (event) => {
+    const nextbtn = document.querySelector('#next-btn');
+    nextbtn.addEventListener('click', event => {
+        console.log('next');
         setNews();
     })
+
+    nextbtn.style.display = 'inline';
 
 }
 
 // set hex color from the input on the mood screen and push to localStorange
 function setColor() {
-    const colorButton = document.querySelector('.hexagon');
-    colorButton.addEventListener('click', (event) => { 
 
-        const newHex = new Hexagon(colorButton.id);
-        hexagons.push(newHex);
-
-        // PROBLEM: set the COLOR not the CONTENT
-    })
+    document.querySelectorAll('.hexagon').forEach(color => {
+        color.addEventListener('click', event => {
+            console.log("yes");
+            const newHex = new Hexagon();
+            newHex.Color = color.id;
+            console.log(newHex.Color);
+            hexagons.push(newHex);
+        })
+    });
 }
 
 // GOOD NEWS VIEW
 function setNews() {
     const main = document.querySelector('main');
-
-    let liIndex = 1;
 
     main.innerHTML = '';
     main.innerHTML += `<h1>Tell me something good!</h1>
@@ -103,44 +132,36 @@ function setNews() {
 
         <section class="good-list" id="set-good-list">
 
-        </section>
-        <div class="next-page">
-            <h2 class="next-page-button2" id="setCanvas">Next Page &#10140; </h2>
-        </div>
-    `;
+        </section>`;
 
     // submit button for the good news list 
     const inputButton = document.querySelector('.good-submit');
 
     inputButton.addEventListener('click', (event) => {
 
-        liIndex += 1;  
-
         event.preventDefault();
 
-        const contentElement = document.querySelector('.good-input');
+        let contentElement = document.querySelector('.good-input').value;
 
         console.log(contentElement);
-        console.log(liIndex);
-        const newHex = new Hexagon(contentElement.value);
+        console.log(hexagons[0].Content);
 
-        console.log(newHex);
-
-        hexagons.push(newHex);
+        hexagons[0].Content = contentElement;
+        console.log(hexagons[0].Content);
 
         localStorage.setItem('hexagons', JSON.stringify(hexagons));
 
         setNewsList();
 
-        contentElement.value = '';
+        contentElement = 'yes';
+        console.log(contentElement);
 
     });
 
-    
-
-    // button calls the set canvas function, moves on to the main display 
-    const newsBtn = document.querySelector('#setCanvas');
-    newsBtn.addEventListener('click', (event) => {
+    const nextbtn = document.querySelector('#next-btn');
+    nextbtn.style.display = 'inline';
+    nextbtn.addEventListener('click', event => {
+        console.log('next');
         setCanvas();
     })
 }
@@ -152,95 +173,49 @@ function setNewsList() {
         newsList.innerHTML = '';
 
         hexagons.forEach((hexagon) => {
-            newsList.innerHTML += 
-            `<li id="${hexagon.Id}">
-                    ${hexagon.Content}
+            newsList.innerHTML +=
+                `<li id="${hexagon.Id}">
+                    <p class="good-list-items">${hexagon.Content}</p>
                 <input type="button" id="${hexagon.Id}" value="x" class="delete"></button>
              </li>
              `;
-        });  
-
+        });
     }
 }
-
-// if selected, delete the selected li in the good news list 
-    const deleteButton = document.querySelector('.delete');
-    // PROBLEM: isn't selecting the selected li, maybe put it in the setNewsList() function
-    deleteButton.addEventListener('click', (event) => {
-        event.preventDefault();
-            // TODO: complete the delete button function
-        console.log('hello');
-        
-    });
-
-
 
 // set the canvas of hexagon section and good news, main display
 function setCanvas() {
     const main = document.querySelector('main');
-        main.innerHTML = '';
+    main.innerHTML = '';
 
-        main.innerHTML += `
+    main.innerHTML += `
         
         <h1 class="mood-canvas-h1">Mood Canvas</h1>
         <div class="section-container">
-        <section class="mood-canvas-section">
-            <div class="hexagon" id="hexagon3"></div>
-            <div class="hexagon" id="hexagon4"></div>
-            <div class="hexagon" id="hexagon5"></div>
-            <div class="hexagon" id="hexagon1"></div>
-            <div class="hexagon" id="hexagon3"></div>
-            <div class="hexagon" id="hexagon2"></div>
-            <div class="hexagon" id="hexagon1"></div>
-            <div class="hexagon" id="hexagon1"></div>
-            <div class="hexagon" id="hexagon2"></div>
-            <div class="hexagon" id="hexagon3"></div>
-            <div class="hexagon" id="hexagon5"></div>
-            <div class="hexagon" id="hexagon3"></div>
-            <div class="hexagon" id="hexagon5"></div>
-            <div class="hexagon" id="hexagon2"></div>
-            <div class="hexagon" id="hexagon4"></div>
-            <div class="hexagon" id="hexagon4"></div>
-            <div class="hexagon" id="hexagon3"></div>
-            <div class="hexagon" id="hexagon2"></div>
-            <div class="hexagon" id="hexagon4"></div>
-            <div class="hexagon" id="hexagon3"></div>
-            <div class="hexagon" id="hexagon1"></div>
-            <div class="hexagon" id="hexagon4"></div>
-            <div class="hexagon" id="hexagon2"></div>
-            <div class="hexagon" id="hexagon3"></div>
-            <div class="hexagon" id="hexagon1"></div>
-            <div class="hexagon" id="hexagon5"></div>
-            <div class="hexagon" id="hexagon5"></div>
-            <div class="hexagon" id="hexagon3"></div>
+        <section class="mood-canvas-section" id="set-canvas">
+
         </section>
         </div>
         <h2 class="good-news-h2">Good News</h2>
         <div class="section-container">
         <section class="news-canvas-section" id="set-good-list">
-            <li class="news-li">
-                <label>Programmed a lot</label>
-            </li>
-            <li>
-                <label>Programmed a lot</label>
-            </li>
-            <li>
-                <label>Programmed a lot</label>
-            </li>
-            <li>
-                <label>Programmed a lot</label>
-            </li>
-        </section>
-        </div>
-        <div class="section-container">
-        <button class="home-btn" id="setMain">Go Home</button
-        </div>
-        `;
 
-        // home button
-        const newsBtn = document.querySelector('#setMain');
-        newsBtn.addEventListener('click', (event) => {
-            setMain();
-        })
+        </section>`;
+
+    const canvas = document.querySelector('#set-canvas');
+    const list = document.querySelector('#set-good-list');
+
+    console.log(hexagons.length);
+    if (hexagons.length > 0) {
+        hexagons.forEach((hexagon) => {
+            list.innerHTML += `<li class="canvas-li">${hexagon.Content}</li>`
+            canvas.innerHTML += `<div class="hexagon" id="${hexagon.Color}"></div>`
+        });
+    }
+
+    nextbtn.style.display = 'none';
+
 }
+
+
 
