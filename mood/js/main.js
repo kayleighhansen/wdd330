@@ -67,7 +67,6 @@ function setMain() {
 
 }
 
-
 // MOOD VIEW //
 function setMood() {
 
@@ -144,10 +143,9 @@ function setNews() {
         let contentElement = document.querySelector('.good-input').value;
 
         console.log(contentElement);
-        console.log(hexagons[0].Content);
 
-        hexagons[0].Content = contentElement;
-        console.log(hexagons[0].Content);
+        hexagons[hexagons.length - 1].Content = contentElement;
+        console.log(hexagons.length - 1);
 
         localStorage.setItem('hexagons', JSON.stringify(hexagons));
 
