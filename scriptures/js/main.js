@@ -23,7 +23,7 @@ function setMain() {
     const main = document.querySelector('main');
     main.innerHTML = '';
     main.innerHTML += `
-    <h1>Welcome to Mood Tracker</h1>
+    <h1>Welcome to Scripture Study Tracker</h1>
     
     <div class="section-container">
         <img src="css/logo.png" alt="logo">
@@ -31,11 +31,10 @@ function setMain() {
 
     <section class="instructions">
         <p>This is a personal journal where you can keep track of your 
-        moods over time.</p>
+        Scripture Study over time.</p>
         
-        <p>Pick a color, think about something good to 
-        remember for darker times, and before you know it, you'll have 
-        a beautiful canvas!</p>
+        <p>Pick a color, think about something you learned, and before 
+        you know it, you'll have a beautiful canvas!</p>
 
         <p>Press the next arrow to get started</p>
     </section>
@@ -64,7 +63,7 @@ function setMood() {
     main.innerHTML = '';
 
     main.innerHTML += `
-    <h1>How are you feeling today?</h1>
+    <h1>How good was your scripture study?</h1>
 
     <h3 class="today-h3">${today}</h3>
 
@@ -107,7 +106,7 @@ function setNews() {
     const main = document.querySelector('main');
 
     main.innerHTML = '';
-    main.innerHTML += `<h1>Tell me something good!</h1>
+    main.innerHTML += `<h1>Tell me something you learned:</h1>
         <div class="input-div">
             <input class="good-input">
             <button class="good-submit">&#10148;</button>
@@ -189,13 +188,13 @@ function setCanvas() {
 
     main.innerHTML += `
         
-        <h1 class="mood-canvas-h1">Mood Canvas</h1>
+        <h1 class="mood-canvas-h1">Scripture Study Canvas</h1>
         <div class="section-container">
         <section class="mood-canvas-section" id="set-canvas">
 
         </section>
         </div>
-        <h2 class="good-news-h2">Good News</h2>
+        <h2 class="good-news-h2">Things you've learned</h2>
         <div class="section-container">
         <section class="news-canvas-section" id="set-good-list">
 

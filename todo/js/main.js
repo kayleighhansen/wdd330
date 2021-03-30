@@ -10,6 +10,25 @@ if (localStorage.getItem('todos')) {
 setToDoList();
 setTopCounter();
 
+function test() {
+    if (todos.length > 0) {
+        let todoList = document.querySelector('ul');
+        todoList.innerHTML = '';
+
+        todos.forEach((todo) => {
+            todoList.innerHTML += 
+            `<li id="${todo.Id}">
+                <label ${todo.Completed ? 'class="completed"' : 'class="not-completed"'}>
+                    <input type="checkbox" value="${todo.Id}" ${todo.Completed ? "checked" : ""}>
+                    ${todo.Content}
+                </label>
+                <input type="button" id="${todo.Id}" value="x" class="delete"></button>
+             </li>
+             `;
+        });
+    }
+}
+
 function setToDoList() {
     if (todos.length > 0) {
         let todoList = document.querySelector('ul');
@@ -25,8 +44,8 @@ function setToDoList() {
                 <input type="button" id="${todo.Id}" value="x" class="delete"></button>
              </li>
              `;
-        });  
-
+        });      
+        
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(
             checkbox => {
@@ -42,6 +61,7 @@ function setToDoList() {
                     todo.Completed = !todo.Completed;
 
                     setTopCounter();
+                    test();
 
                     console.log("counter");
 
@@ -55,7 +75,6 @@ function setToDoList() {
 }
 
 // add new ToDos
-
 const button = document.querySelector('#btnSave');
 
 button.addEventListener('click', (event) => {
@@ -73,6 +92,7 @@ button.addEventListener('click', (event) => {
     localStorage.setItem('todos', JSON.stringify(todos));
 
     setToDoList();
+    setTopCounter();
     console.log(todos);
 
     // reset textbox
