@@ -37,7 +37,7 @@ element_3.appendChild(notes_button);
     },
     {
         label: "week 01",
-        url: "../week01/index.html"
+        url: "../wdd330/week01/index.html"
     },
     {
         label: "week 02",
